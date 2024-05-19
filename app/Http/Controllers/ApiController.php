@@ -42,6 +42,8 @@ class ApiController extends Controller
 
         User::where('email', $request->email)->increment('balance', $request->amount) ?? null;
 
+        Deposit::where('trx', $request->order_id)->update(['status'=> 1]);
+
         $amount = number_format($request->amount, 2);
 
         return response()->json([
