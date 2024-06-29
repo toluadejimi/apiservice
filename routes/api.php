@@ -22,5 +22,3 @@ Route::any('verify',  [ApiController::class,'verify_username']);
 
 
 
-
-
